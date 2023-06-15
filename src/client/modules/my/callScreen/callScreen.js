@@ -3,7 +3,7 @@ import {LightningElement} from "lwc";
 export default class CallScreen extends LightningElement {
 
     async connectedCallback() {
-        await fetch('http://localhost:10000/src/my/callScreen/scene-1.txt').then(response => {
+        await fetch('https://raw.githubusercontent.com/Yabashiri/etrian-odyssey/master/src/client/modules/my/callScreen/scene-1.txt').then(response => {
             console.log(response.text());
             console.log(response);
         }).catch(error => {
