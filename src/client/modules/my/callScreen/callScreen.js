@@ -13,11 +13,6 @@ export default class CallScreen extends LightningElement {
         styles.href = './resources/css/bootstrap.min.css';
         styles.rel = 'stylesheet';
         this.template.appendChild(styles);
-
-        const webFormStyles = document.createElement('link');
-        webFormStyles.href = './resources/css/odyssey.css';
-        webFormStyles.rel = 'stylesheet';
-        this.template.appendChild(webFormStyles);
     }
 
     async connectedCallback() {
@@ -30,19 +25,16 @@ export default class CallScreen extends LightningElement {
     }
 
     parseScene(text) {
-        console.log(text);
         let lines = text.split('\n');
         let i = 1;
         lines.forEach(line => {
            this.scene1.push({...this.parseLine(line), id: 'line' + i++});
         });
         this.isLoaded = true;
-        console.log(this.scene1);
     }
 
     parseLine(line) {
         if(line.startsWith('https')) {
-            console.log('test');
             return {image: line};
         }
         let separatorIndex = line.indexOf(': ');
@@ -51,11 +43,8 @@ export default class CallScreen extends LightningElement {
         return {
             speaker: identifier,
             line: text,
-            image: PORTRAITS[identifier]
+            image: PORTRAITS[identifier],
+            story: identifier === 'none'
         };
-    }
-
-    get kaedePortrait() {
-        return 'https://rhematic.net/eon_lp/common_img/ashley.png';
     }
 }
