@@ -3,22 +3,9 @@ import CHARACTERS from './charactersToPortraits.json';
 
 export default class CallScreen extends LightningElement {
 
-    @api speaker;
+    @api image;
 
     get portrait() {
-        switch(this.speaker) {
-            case 'kaede':
-                return CHARACTERS.kaede;
-            case 'ryoko':
-                return CHARACTERS.ryoko;
-            case 'iruma':
-                return CHARACTERS.iruma;
-            case 'rantaro':
-                return CHARACTERS.rantaro;
-            case 'kirumi':
-                return CHARACTERS.kirumi;
-            default:
-                return '';
-        }
+        return this.image;
     }
 }

@@ -41,6 +41,11 @@ export default class CallScreen extends LightningElement {
     }
 
     parseLine(line) {
+        console.log(line);
+        if(line.startsWith('https')) {
+            console.log('test');
+            return {image: line};
+        }
         let separatorIndex = line.indexOf(': ');
         let [identifier, text] = [line.slice(0, separatorIndex), line.slice(separatorIndex + 2)];
         identifier = IDENTIFIERS[identifier];
