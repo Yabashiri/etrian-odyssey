@@ -10,7 +10,7 @@ export default class CallScreen extends LightningElement {
             console.log(error);
         });
 
-        await fetch('./scene1-txt').then(response => {
+        await fetch('https://example-files.online-convert.com/document/txt/example.txt').then(response => {
             console.log(response.text());
             console.log(response);
         }).catch(error => {
