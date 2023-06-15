@@ -1,5 +1,5 @@
 import {LightningElement} from 'lwc';
-import PORTRAITS from '../portraits/charactersToPortraits.json'
+import PORTRAITS from './charactersToPortraits.json'
 import IDENTIFIERS from './ruCharactersToIdenfitiers.json';
 
 export default class CallScreen extends LightningElement {
@@ -41,7 +41,6 @@ export default class CallScreen extends LightningElement {
     }
 
     parseLine(line) {
-        console.log(line);
         if(line.startsWith('https')) {
             console.log('test');
             return {image: line};
