@@ -8,6 +8,7 @@ const app = express();
 app.use(
     helmet({
         contentSecurityPolicy: false,
+        crossOriginEmbedderPolicy: false
     })
 );
 app.use(compression());
