@@ -7,6 +7,19 @@ export default class CallScreen extends LightningElement {
     scene1 = [];
     isLoaded = false;
 
+    constructor() {
+        super();
+        const styles = document.createElement('link');
+        styles.href = './resources/css/bootstrap.min.css';
+        styles.rel = 'stylesheet';
+        this.template.appendChild(styles);
+
+        const webFormStyles = document.createElement('link');
+        webFormStyles.href = './resources/css/odyssey.css';
+        webFormStyles.rel = 'stylesheet';
+        this.template.appendChild(webFormStyles);
+    }
+
     async connectedCallback() {
         await fetch('https://raw.githubusercontent.com/Yabashiri/etrian-odyssey/master/src/client/modules/my/callScreen/scene-1.txt').
         then(response => {
