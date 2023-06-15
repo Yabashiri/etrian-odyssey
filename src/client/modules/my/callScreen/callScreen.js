@@ -1,5 +1,5 @@
 import {LightningElement} from 'lwc';
-import PORTRAITS from './charactersToPortraits.json'
+import PORTRAITS from '../portraits/charactersToPortraits.json'
 import IDENTIFIERS from './ruCharactersToIdenfitiers.json';
 
 export default class CallScreen extends LightningElement {
@@ -51,7 +51,7 @@ export default class CallScreen extends LightningElement {
         };
     }
 
-    kaedePortrait() {
-        return 'https://rhematic.net/eon_lp/u1/img/t001.png';
+    get kaedePortrait() {
+        return 'https://rhematic.net/eon_lp/common_img/ashley.png';
     }
 }

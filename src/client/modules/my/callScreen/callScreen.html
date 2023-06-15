@@ -1,6 +1,5 @@
 <template>
     <div style="background-color: #f3f3f3">
-        <img src={kaedePortrait}>
         <template if:true={isLoaded}>
             <template for:each={scene1} for:item="line">
                 <my-portraits speaker={line.speaker} key={line.id}></my-portraits> {line.line}
