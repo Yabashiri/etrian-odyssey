@@ -5,7 +5,7 @@ export default class App extends LightningElement {
 
     async loadCtor() {
         let ctor;
-        ctor = await import('../callScreen/callScreen');
+        ctor = await import('../chapterOne/chapterOne');
         if(ctor) {
             this.customCtor = ctor.default;
         }

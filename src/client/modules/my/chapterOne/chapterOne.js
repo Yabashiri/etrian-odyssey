@@ -28,7 +28,7 @@ export default class CallScreen extends LightningElement {
         let lines = text.split('\n');
         let i = 1;
         lines.forEach(line => {
-           this.scene1.push({...this.parseLine(line), id: 'line' + i++});
+            this.scene1.push({...this.parseLine(line), id: 'line' + i++});
         });
         this.isLoaded = true;
     }
