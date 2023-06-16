@@ -1,10 +1,11 @@
-import {LightningElement} from 'lwc';
+import {LightningElement, api} from 'lwc';
 import PORTRAITS from './charactersToPortraits.json'
 import IDENTIFIERS from './ruCharactersToIdenfitiers.json';
 
 export default class CallScreen extends LightningElement {
 
-    scene1 = [];
+    @api chapter;
+    scene = [];
     isLoaded = false;
 
     constructor() {
@@ -16,8 +17,8 @@ export default class CallScreen extends LightningElement {
     }
 
     async connectedCallback() {
-        await fetch('https://raw.githubusercontent.com/Yabashiri/etrian-odyssey/master/src/client/modules/my/chapterOne/scene.txt').
-        then(response => {
+        await fetch(this.chapter
+        ).then(response => {
             return response.text()
         }).then(text => {
             this.parseScene(text);
@@ -28,7 +29,7 @@ export default class CallScreen extends LightningElement {
         let lines = text.split('\n');
         let i = 1;
         lines.forEach(line => {
-            this.scene1.push({...this.parseLine(line), id: 'line' + i++});
+            this.scene.push({...this.parseLine(line), id: 'line' + i++});
         });
         this.isLoaded = true;
     }
