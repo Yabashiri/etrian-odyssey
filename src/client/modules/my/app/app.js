@@ -21,8 +21,4 @@ export default class App extends LightningElement {
             this.customCtor = ctor.default;
         }
     }
-
-    connectedCallback() {
-        //this.loadCtor();
-    }
 }
