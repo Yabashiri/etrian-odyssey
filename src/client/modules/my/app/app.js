@@ -16,6 +16,9 @@ export default class App extends LightningElement {
             case 'floors35':
                 this.chapter = 'https://raw.githubusercontent.com/Yabashiri/etrian-odyssey/master/src/client/modules/my/chapterOne/scenes/scene-3.txt';
                 break;
+            case 'fenrir':
+                this.chapter = 'https://raw.githubusercontent.com/Yabashiri/etrian-odyssey/master/src/client/modules/my/chapterOne/scenes/scene-4.txt';
+                break;
             default:
                 break;
         }
